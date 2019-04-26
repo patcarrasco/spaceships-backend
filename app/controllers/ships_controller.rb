@@ -18,8 +18,8 @@ class ShipsController < ApplicationController
 			render json: ShipSerializer.new(@found)
 		else
 			@ship = Ship.new(ship_params)
-			@ship.x = rand(1..300)
-			@ship.y = rand(1..300)
+			@ship.x = rand(1..5000)
+			@ship.y = rand(1..5000)
 	    	if @ship.save
 				@score = Score.new(ship: @ship)
 				#options = {include: [:scores]}

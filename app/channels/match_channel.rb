@@ -7,9 +7,10 @@ class MatchChannel < ApplicationCable::Channel
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    puts params
     @ship = Ship.find(params[:shipId])
     @ship.update(status: false)
+
+    # byebug
 
     @ships = Ship.where("status = true")
     ActionCable.server.broadcast "match", ShipSerializer.new(@ships)
@@ -30,7 +31,8 @@ class MatchChannel < ApplicationCable::Channel
   end
 
   def disconnect(data)
-    puts data
+    byebug
+    puts "DISCONNECT!", data
   end
 
 end
