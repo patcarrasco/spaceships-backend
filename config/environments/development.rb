@@ -54,4 +54,6 @@ Rails.application.configure do
 
   config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, /file:\/\/*/, 'file://']
 
+  ActiveRecord::Base.logger = nil
+
 end

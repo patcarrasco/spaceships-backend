@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_01_23_144005) do
     t.boolean "status", default: true
     t.integer "x"
     t.integer "y"
-    t.float "angle"
+    t.integer "angle", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
